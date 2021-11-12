@@ -1,3 +1,5 @@
+import os
+import sys
 import difflib
 import editdistance
 import math
@@ -226,7 +228,23 @@ def get_gruen(candidates):
 
 
 if __name__ == "__main__":
-    candidates = ["This is a good example.",
-                  "This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets."]
+    directory = ''
+    try:
+        directory = sys.argv[1]
+    except IndexError:
+        print( "Usage: python3 Main.py <directory to open>")
+        exit()
+    filesToOpen  = os.listdir(directory)
+    candidates = []
+    opened = []
+    for fileToOpen in filesToOpen:
+        try:
+            with open(sys.argv[1] + '/' + fileToOpen, "r") as f:
+                candidates.append(f.read())
+                opened.append(fileToOpen)
+        except: 
+            x = 0
     gruen_score = get_gruen(candidates)
+    for index, candidate in enumerate(gruen_score):
+        print(candidate, opened[index])
     print(gruen_score)
