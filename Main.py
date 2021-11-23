@@ -239,7 +239,7 @@ if __name__ == "__main__":
     opened = []
     for fileToOpen in filesToOpen:
         try:
-            with open(sys.argv[1] + '/' + fileToOpen, "r") as f:
+            with open(sys.argv[1] + '/' + fileToOpen, "r", encoding="utf-8") as f:
                 candidates.append(f.read())
                 opened.append(fileToOpen)
         except: 

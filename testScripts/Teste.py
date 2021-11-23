@@ -232,7 +232,7 @@ if __name__ == "__main__":
     #               "I like apples. I really like apples.",
     #               "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
     #               "Once upon a time."]
-    candidates = ["A Man was standing there. \
+    '''candidates = ["A Man was standing there. \
     Old Crow called to him, 'Good man, what do you \
     Do today?' \
     'I'm standing here, sir' said the man. \
@@ -251,10 +251,7 @@ if __name__ == "__main__":
     left, were sitting at the feast with the goose, and the duck on top\
     of it. One said to the goose: 'What do you want?'\
     The goose said: 'To be kissed' and the other said: \
-    'A goose and a duck's feathers for your shoes.'"]
-    #for idx, val in enumerate(candidates):
-    #    f = open ("teste" + str(idx), "w")
-    #    f.write(val)
-    #    f.close()
+    'A goose and a duck's feathers for your shoes.'"]'''
+    candidates = [ "the girl was young" ]
     gruen_score = get_gruen(candidates)
     print(gruen_score)
