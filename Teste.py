@@ -234,75 +234,75 @@ if __name__ == "__main__":
     #               "Once upon a time."]
     candidates = ["======== SAMPLE 1 ======== \
     If you \
-    will give me some bran, I will give you bran to make rice." And they \
+    will give me some bran, I will give you bran to make rice.\" And they \
     lived happily together. \
-    \
-    \
+     \
+     \
     --------------------------------------------------- \
     Old Mr. Lacy and His Three Sons \
-    \
-    \
+     \
+     \
     They have a tradition at Winterton that there was formerly one Mr. \
     Lacy, that lived there and was a very rich man, who, being grown very \
     aged, gave all that he had away unto his three sons, upon condition that \
     one should keep him one week, and another another. \
-    \
-    \
+     \
+     \
     But it happened within a little while that they were all weary of him, \
     after that they had got what they had, and regarded him no more than a \
     dog. \
-    \
-    \
+     \
+     \
     The old man perceiving how he was slighted, went to an attorney to see \
     if his skill could not afford him any help in his troubles. The attorney \
     told him that no law in the land could help him nor yield him any comfort, \
     but there was one thing only which would certainly do, which, if he would \
     perform, he would willingly suffer. \
-    \
-    \
-    "O source of wisdom, indeed!" said the poor old man, "for such an \
+     \
+     \
+    \"O source of wisdom, indeed!\" said the poor old man, \"for such an \
     authority to say so! What will you give me, if I undertake your \
-    project? If I am to undertake it, I must first see what else is there." \
-    \
-    \
-    "There is nothing else," answered the lawyer, "for you to bid me do, and nothing \
-    else." \
-    \
-    \
-    "Then for God's sake, sir," said the poor man, "take me to the spring of the \
+    project? If I am to undertake it, I must first see what else is there.\" \
+     \
+     \
+    \"There is nothing else,\" answered the lawyer, \"for you to bid me do, and nothing \
+    else.\" \
+     \
+     \
+    \"Then for God's sake, sir,\" said the poor man, \"take me to the spring of the \
     rock, and throw me in there, and make a spring of it too, and let it dry up, and you \
-    will see what will come out of it." \
-    \
-    \
+    will see what will come out of it.\" \
+     \
+     \
     The lawyer, believing in his master's words, went to the spring of the \
     rock, and dipped the tip of his finger in the water, and quickly drew it \
     out. The old man, not suspecting any trick, went home, and found his \
     finger-tip inside the crystal. \
-    \
-    \
-    "Well," said he, "my source of wisdom is at hand," and he felt more \
+     \
+     \
+    \"Well,\" said he, \"my source of wisdom is at hand,\" and he felt more \
     certain than he had ever been before. \
-    \
-    \
+     \
+     \
     When the month was over the master gave Brer Fox a farm and rolled \
     him a six-league hole in it. Brer Fox, you see, was a smart young \
     cat, and he used to come to the door and make fun of the folks for not \
     having round round back fences, and he always said when they had anything to \
-    eat, "They won't notice it, because they have only me to eat \
-    them." \
-    \
-    \
+    eat, \"They won't notice it, because they have only me to eat \
+    them.\" \
+     \
+     \
     Brer Rabbit kept to his word. He hadn't gone very far until he \
     saw a house about a quarter of a mile off, and he stopped and made \
     a spring, as he saw them coming out of the house, and he jumped \
-    across it, and when they were ready to cross over, he called out, "Da \
-    kirot, Da kelpie," which is the same as Brer Fox, and the name is \
+    across it, and when they were ready to cross over, he called out, \"Da \
+    kirot, Da kelpie,\" which is the same as Brer Fox, and the name is \
     haed as well. When they were ready to stop for the take, Brer Rabbit \
-    called out, "Yentem, ye mither, put you in the middle er deep en say, Brer Fox, \
+    called out, \"Yentem, ye mither, put you in the middle er deep en say, Brer Fox, \
     weel come ter the middle er edge er fastness, Brer Rabbit, all kin be there \
-    in five minutes." \
-    \
-    \
+    in five minutes.\" \
+     \
+     \
     They ne'er heard anything else, and they got upon the job in \
     five minutes faster than Brer Rabbit. At last they came to the place where \
     the big road forks -- and that's where they got to. The way was so \
@@ -318,10 +318,10 @@ if __name__ == "__main__":
     So I went with them, and they had a servant girl under \
     their house. I asked her if she would like to be married to the \
     prince and heir of this kingdom. She said she would, if he \
-    would behave herself well. No sooner were the words, "I will \
-    marry you," said, than she immediately became waterly, little \
+    would behave herself well. No sooner were the words, \"I will \
+    marry you,\" said, than she immediately became waterly, little \
     finger, and little bird.  \
-    \
+     \
     I was very kind to her, and said I would not mind if she should \
     have my own way, and treated her as I would my own \
     "]
