@@ -21,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 """ Processing """
 def preprocess_candidates(candidates):
     for i in range(len(candidates)):
-        candidates[i] = candidates[i].strip()
+        candidates[i] = candidates[i].strip() 
         candidates[i] = '. '.join(candidates[i].split('\n\n'))
         candidates[i] = '. '.join(candidates[i].split('\n'))
         candidates[i] = '.'.join(candidates[i].split('..'))
@@ -37,6 +37,7 @@ def preprocess_candidates(candidates):
         candidates[i] = candidates[i].strip()
     processed_candidates = []
     for candidate_i in candidates:
+        print(candidate_i)
         sentences = sent_tokenize(candidate_i)
         out_i = []
         for sentence_i in sentences:
@@ -245,6 +246,6 @@ if __name__ == "__main__":
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
-    for index, candidate in enumerate(gruen_score):
-        print(candidate, opened[index])
+   # for index, candidate in enumerate(gruen_score):
+    #    print(candidate, opened[index])
     print(gruen_score)
