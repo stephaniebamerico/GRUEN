@@ -241,7 +241,9 @@ if __name__ == "__main__":
     for fileToOpen in filesToOpen:
         try:
             with open(sys.argv[1] + '/' + fileToOpen, "r", encoding="utf-8") as f:
-                candidates.append(f.read())
+                readFile = f.read()
+                arquivo = readFile.replace('\n', '     ')
+                candidates.append(arquivo)
                 opened.append(fileToOpen)
         except: 
             x = 0
