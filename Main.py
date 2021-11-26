@@ -37,7 +37,7 @@ def preprocess_candidates(candidates):
         candidates[i] = candidates[i].strip()
     processed_candidates = []
     for candidate_i in candidates:
-        print(candidate_i)
+        #print(candidate_i)
         sentences = sent_tokenize(candidate_i)
         out_i = []
         for sentence_i in sentences:
@@ -221,6 +221,7 @@ def get_focus_score(all_summary):
 
 def get_gruen(candidates):
     processed_candidates = preprocess_candidates(candidates)
+    #print(candidates[1])
     grammaticality_score = get_grammaticality_score(processed_candidates)
     redundancy_score = get_redundancy_score(processed_candidates)
     focus_score = get_focus_score(processed_candidates)
@@ -242,12 +243,12 @@ if __name__ == "__main__":
         try:
             with open(sys.argv[1] + '/' + fileToOpen, "r", encoding="utf-8") as f:
                 readFile = f.read()
-                arquivo = readFile.replace('\n', '     ')
+                arquivo = readFile.replace('\n', ' ')
                 candidates.append(arquivo)
                 opened.append(fileToOpen)
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
-   # for index, candidate in enumerate(gruen_score):
-    #    print(candidate, opened[index])
+    for index, candidate in enumerate(gruen_score):
+        print(candidate, opened[index])
     print(gruen_score)
