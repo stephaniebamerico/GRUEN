@@ -248,7 +248,7 @@ if __name__ == "__main__":
                 listaHistorias = arquivo.split('---------------------------------------------------')
                 for historia in listaHistorias:
 
-                candidates.append(historia)
+                    candidates.append(historia)
                 opened.append(fileToOpen)
         except: 
             x = 0
