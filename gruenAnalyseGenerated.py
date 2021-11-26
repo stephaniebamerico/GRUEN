@@ -254,7 +254,7 @@ if __name__ == "__main__":
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
-    with open('names.csv', 'w', newline='') as csvfile:
+    with open('gruenScoreSamples.csv', 'w', newline='') as csvfile:
         fieldnames = ['fileName', 'story', 'gruen score']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
