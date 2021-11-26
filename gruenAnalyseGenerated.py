@@ -221,6 +221,7 @@ def get_focus_score(all_summary):
 
 
 def get_gruen(candidates):
+    # return [1] * len(candidates)
     processed_candidates = preprocess_candidates(candidates)
     grammaticality_score = get_grammaticality_score(processed_candidates)
     redundancy_score = get_redundancy_score(processed_candidates)
@@ -249,20 +250,19 @@ if __name__ == "__main__":
                 for historia in listaHistorias:
 
                     candidates.append(historia)
-                opened.append(fileToOpen)
+                    opened.append(fileToOpen)
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
     with open('names.csv', 'w', newline='') as csvfile:
-        fieldnames = ['story', 'gruen score']
+        fieldnames = ['fileName', 'story', 'gruen score']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
 
         for index, score in enumerate(gruen_score):
-            writer.writerow({'story': candidates[index], 'gruen score': score})
+            writer.writerow({ 'fileName': opened[index], 'story': candidates[index], 'gruen score': score})
     
-       
     #    print(candidate, opened[index])
 
     print(gruen_score)
