@@ -14,6 +14,7 @@ from transformers import BertConfig, BertForSequenceClassification, BertTokenize
 from transformers import glue_convert_examples_to_features
 from transformers.data.processors.utils import InputExample
 from wmd import WMD
+import csv
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -21,7 +22,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 """ Processing """
 def preprocess_candidates(candidates):
     for i in range(len(candidates)):
-        candidates[i] = candidates[i].strip()
+        candidates[i] = candidates[i].strip() 
         candidates[i] = '. '.join(candidates[i].split('\n\n'))
         candidates[i] = '. '.join(candidates[i].split('\n'))
         candidates[i] = '.'.join(candidates[i].split('..'))
@@ -37,6 +38,7 @@ def preprocess_candidates(candidates):
         candidates[i] = candidates[i].strip()
     processed_candidates = []
     for candidate_i in candidates:
+        print(candidate_i)
         sentences = sent_tokenize(candidate_i)
         out_i = []
         for sentence_i in sentences:
@@ -239,12 +241,28 @@ if __name__ == "__main__":
     opened = []
     for fileToOpen in filesToOpen:
         try:
-            with open(sys.argv[1] + '/' + fileToOpen, "r") as f:
-                candidates.append(f.read())
+            with open(sys.argv[1] + '/' + fileToOpen, "r", encoding="utf-8") as f:
+                readFile = f.read()
+                arquivo = readFile.replace('\n', ' ')
+                arquivo =arquivo.replace('======== SAMPLE 1 ========', '')
+                listaHistorias = arquivo.split('---------------------------------------------------')
+                for historia in listaHistorias:
+
+                    candidates.append(historia)
                 opened.append(fileToOpen)
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
-    for index, candidate in enumerate(gruen_score):
-        print(candidate, opened[index])
+    with open('names.csv', 'w', newline='') as csvfile:
+        fieldnames = ['story', 'gruen score']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+
+        for index, score in enumerate(gruen_score):
+            writer.writerow({'story': candidates[index], 'gruen score': score})
+    
+       
+    #    print(candidate, opened[index])
+
     print(gruen_score)
