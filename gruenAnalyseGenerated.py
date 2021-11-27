@@ -230,7 +230,7 @@ def get_gruen(candidates):
     ret = []
     ret.append(gruen_score)
     ret.append(grammaticality_score)
-    ret.append(redundancy)
+    ret.append(redundancy_score)
     ret.append(focus_score)
     ret[0] = gruen_score
     ret[1] = grammaticality_score
