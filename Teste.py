@@ -255,6 +255,8 @@ if __name__ == "__main__":
 
         format_float = "{:.15f}".format(gruen_score[1])
         print(format_float)
+        format_float = "{:.15f}".format(gruen_score[2])
+        print(format_float)
         if (gruen_score[0] == 0):
             hi = mid
         if (gruen_score[1] == 0):
