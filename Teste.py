@@ -238,7 +238,7 @@ if __name__ == "__main__":
     while (hi > lo):
         mid = int((hi + lo)/2)
 
-        candidates = [text[lo:mid], text[mid:hi]]
+        candidates = [text[lo:mid], text[mid:hi], text[lo:hi]]
         print("--------------")
         print(candidates)
         print("--------------")
