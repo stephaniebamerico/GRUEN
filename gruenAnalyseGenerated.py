@@ -227,7 +227,12 @@ def get_gruen(candidates):
     redundancy_score = get_redundancy_score(processed_candidates)
     focus_score = get_focus_score(processed_candidates)
     gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
-    return [gruen_score, grammaticality_score, redundancy_score, focus_score]
+    ret = []
+    ret=[0] = gruen_score
+    ret[1] = grammaticality_score
+    ret[2] = redundancy_score
+    ret[3] = focus_score
+    return ret
 
 
 if __name__ == "__main__":
