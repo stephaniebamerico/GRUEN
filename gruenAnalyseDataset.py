@@ -257,14 +257,14 @@ if __name__ == "__main__":
     #print(len(candidates))
     #exit()
     gruen_score = get_gruen(candidates)
-    with open('gruenScoreDataset.csv', 'w', newline='') as csvfile:
-        fieldnames = ['fileName', 'story', 'gruen score']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    # with open('gruenScoreDataset.csv', 'w', newline='') as csvfile:
+    #     fieldnames = ['fileName', 'story', 'gruen score']
+    #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-        writer.writeheader()
+    #     writer.writeheader()
 
-        for index, score in enumerate(gruen_score):
-            writer.writerow({ 'fileName': opened[index], 'story': candidates[index], 'gruen score': score})
+    #     for index, score in enumerate(gruen_score):
+    #         writer.writerow({ 'fileName': opened[index], 'story': candidates[index], 'gruen score': score})
     
     #    print(candidate, opened[index])
 
