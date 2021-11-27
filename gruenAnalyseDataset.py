@@ -249,10 +249,13 @@ if __name__ == "__main__":
                 for historia in listaHistorias:
 
                     candidates.append(historia)
-                opened.append(fileToOpen)
+                    opened.append(fileToOpen)
         except: 
             x = 0
-    candidates = candidates[0:4]
+    #candidates = candidates[0:4]
+    #print(candidates)
+    #print(len(candidates))
+    #exit()
     gruen_score = get_gruen(candidates)
     with open('gruenScoreDataset.csv', 'w', newline='') as csvfile:
         fieldnames = ['fileName', 'story', 'gruen score']
