@@ -240,7 +240,11 @@ if __name__ == "__main__":
 
         candidates = [text[lo:mid], text[mid:hi], text[lo:hi]]
         print("--------------")
-        print(candidates)
+        for candi in candidates:
+            print()
+            print (candi)
+            print()
+        # print(candidates)
         print("--------------")
     #for idx, val in enumerate(candidates):
     #    f = open ("teste" + str(idx), "w")
