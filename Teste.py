@@ -238,8 +238,10 @@ if __name__ == "__main__":
     while (hi > lo):
         mid = int((hi + lo)/2)
 
-        candidates = [text[lo:mid], text[mid,hi]]
+        candidates = [text[lo:mid], text[mid:hi]]
+        print("--------------")
         print(candidates)
+        print("--------------")
     #for idx, val in enumerate(candidates):
     #    f = open ("teste" + str(idx), "w")
     #    f.write(val)
