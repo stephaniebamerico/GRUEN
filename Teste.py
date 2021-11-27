@@ -247,7 +247,9 @@ if __name__ == "__main__":
     #    f.write(val)
     #    f.close()
         gruen_score = get_gruen(candidates)
-        print(gruen_score)
+        # print(gruen_score)
+        "{:.15f}".format(gruen_score[0])
+        "{:.15f}".format(gruen_score[1])
         if (gruen_score[0] == 0):
             hi = mid
         if (gruen_score[1] == 0):
