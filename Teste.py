@@ -248,8 +248,13 @@ if __name__ == "__main__":
     #    f.close()
         gruen_score = get_gruen(candidates)
         # print(gruen_score)
-        "{:.15f}".format(gruen_score[0])
-        "{:.15f}".format(gruen_score[1])
+        # float = 2.154327
+        # format_float = "{:.2f}".format(float)
+        format_float = "{:.15f}".format(gruen_score[0])
+        print(format_float)
+
+        format_float = "{:.15f}".format(gruen_score[1])
+        print(format_float)
         if (gruen_score[0] == 0):
             hi = mid
         if (gruen_score[1] == 0):
