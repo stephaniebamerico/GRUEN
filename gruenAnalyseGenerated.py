@@ -226,12 +226,12 @@ def get_gruen(candidates):
     grammaticality_score = get_grammaticality_score(processed_candidates)
     redundancy_score = get_redundancy_score(processed_candidates)
     focus_score = get_focus_score(processed_candidates)
+    gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
     ret = []
+    ret.append(gruen_score)
     ret.append(grammaticality_score)
     ret.append(redundancy_score)
     ret.append(focus_score)
-    gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
-    ret.append(gruen_score)
     ret[0] = gruen_score
     ret[1] = grammaticality_score
     ret[2] = redundancy_score
@@ -263,22 +263,20 @@ if __name__ == "__main__":
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
-    for score in gruen_score:
-        print (score)
-    # with open('gruenScoreSamplesAllScores.csv', 'w', newline='') as csvfile:
-    #     fieldnames = ['fileName', 'story', 'gruen score', 'grammaticality_score', 'redundancy_score', 'focus_score']
-    #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    with open('gruenScoreSamplesAllScores.csv', 'w', newline='') as csvfile:
+        fieldnames = ['fileName', 'story', 'gruen score', 'grammaticality_score', 'redundancy_score', 'focus_score']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-    #     writer.writeheader()
+        writer.writeheader()
 
-    #     for index, score in enumerate(gruen_score):
-    #         writer.writerow({ 'fileName': opened[index], 
-    #         'story': candidates[index], 
-    #         'gruen score': score[3],
-    #         'grammaticality_score': score[0],
-    #         'redundancy_score': score[1],
-    #         'focus_score': score[2],
-    #         })
+        for index, score in enumerate(gruen_score[0]):
+            writer.writerow({ 'fileName': opened[index], 
+            'story': candidates[index], 
+            'gruen score': score,
+            'grammaticality_score': gruen_score[1][index],
+            'redundancy_score': gruen_score[2][index],
+            'focus_score': gruen_score[3][index],
+            })
     #    print(candidate, opened[index])
 
-    # print(gruen_score)
+    print(gruen_score)

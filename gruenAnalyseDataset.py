@@ -265,22 +265,20 @@ if __name__ == "__main__":
     #print(len(candidates))
     #exit()
     gruen_score = get_gruen(candidates)
-    for score in gruen_score:
-        print (score)
-    # with open('gruenScoreDatasetAllScores.csv', 'w', newline='') as csvfile:
-    #     fieldnames = ['fileName', 'story', 'gruen score', 'grammaticality_score', 'redundancy_score', 'focus_score']
-    #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    with open('gruenScoreDatasetAllScores.csv', 'w', newline='') as csvfile:
+        fieldnames = ['fileName', 'story', 'gruen score', 'grammaticality_score', 'redundancy_score', 'focus_score']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-    #     writer.writeheader()
+        writer.writeheader()
 
-    #     for index, score in enumerate(gruen_score):
-    #         writer.writerow({ 'fileName': opened[index], 
-    #         'story': candidates[index], 
-    #         'gruen score': score[0],
-    #         'grammaticality_score': score[1],
-    #         'redundancy_score': score[2],
-    #         'focus_score': score[3],
-    #         })
+        for index, score in enumerate(gruen_score[0]):
+            writer.writerow({ 'fileName': opened[index], 
+            'story': candidates[index], 
+            'gruen score': score,
+            'grammaticality_score': gruen_score[1][index],
+            'redundancy_score': gruen_score[2][index],
+            'focus_score': gruen_score[3][index],
+            })
     
     #    print(candidate, opened[index])
 
