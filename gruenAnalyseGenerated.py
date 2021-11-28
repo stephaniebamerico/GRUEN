@@ -263,7 +263,7 @@ if __name__ == "__main__":
         except: 
             x = 0
     gruen_score = get_gruen(candidates)
-    with open('gruenScoreSamplesAllScores.csv', 'w', newline='') as csvfile:
+    with open('gruenScoreSamplesAllScores-onlyHighScoresDataset.csv', 'w', newline='') as csvfile:
         fieldnames = ['fileName', 'story', 'gruen score', 'grammaticality_score', 'redundancy_score', 'focus_score']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
