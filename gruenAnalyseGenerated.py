@@ -264,7 +264,7 @@ if __name__ == "__main__":
             x = 0
     gruen_score = get_gruen(candidates)
     with open('gruenScoreSamples.csv', 'w', newline='') as csvfile:
-        fieldnames = ['fileName', 'story', 'gruen score']
+        fieldnames = ['fileName', 'story', 'gruen score', 'grammaticality_score', 'redundancy_score', 'focus_score']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
