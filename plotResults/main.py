@@ -205,7 +205,7 @@ def plotLines(sampleScores, datasetScores, title, outfile, plotZero=False):
     plt.savefig(outfile, dpi=300, bbox_inches='tight')
 
 
-def calcStatistics(sampleScores, datasetScores):
+def calcStatistics(sampleScores, datasetScores, sampleTrainingFilteredAllScores):
     allScores = []
     grammScores = []
     focusScores = []
@@ -215,6 +215,16 @@ def calcStatistics(sampleScores, datasetScores):
         grammScores.append(float(sampleScore[GRAMATICALITY]))
         redundancyScore.append(float(sampleScore[REDUNCANCY]))
         focusScores.append(float(sampleScore[FOCUS]))
+
+    allScoresFilteredSamples = []
+    grammScoresFilteredSamples = []
+    focusScoresFilteredSamples = []
+    redundancyScoreFilteredSamples = []
+    for index, sampleScore in enumerate(sampleTrainingFilteredAllScores):
+        allScoresFilteredSamples.append(float(sampleScore[1]))
+        grammScoresFilteredSamples.append(float(sampleScore[GRAMATICALITY]))
+        redundancyScoreFilteredSamples.append(float(sampleScore[REDUNCANCY]))
+        focusScoresFilteredSamples.append(float(sampleScore[FOCUS]))
 
     allScoresDataset = []
     grammScoresDataset = []
@@ -245,6 +255,19 @@ def calcStatistics(sampleScores, datasetScores):
           "{:.4f}".format(statistics.mean(focusScores)), "$", "\\\\")
     print("Pontuação de  Redundância &", "$", "{:.4f}".format(statistics.mean(redundancyScoreDataset)), "$", "&", "$",
           "{:.4f}".format(statistics.mean(redundancyScore)), "$",
+          "\\\\")
+    print()
+    print()
+    print("Característica Avaliada & Média amostras conjunto A & Média amostras conjunto B \\\\")
+    print("Pontuação geral &", "$", "{:.4f}".format(statistics.mean(allScores)), "$", "&", "$",
+          "{:.4f}".format(statistics.mean(allScoresFilteredSamples)), "$", "\\\\")
+    print("Pontuação de Gramaticalidade &", "$", "{:.4f}".format(statistics.mean(grammScores)), "$", "&", "$",
+          "{:.4f}".format(statistics.mean(grammScoresFilteredSamples)), "$",
+          "\\\\")
+    print("Pontuação de Foco &", "$", "{:.4f}".format(statistics.mean(focusScores)), "$", "&", "$",
+          "{:.4f}".format(statistics.mean(focusScoresFilteredSamples)), "$", "\\\\")
+    print("Pontuação de  Redundância &", "$", "{:.4f}".format(statistics.mean(redundancyScore)), "$", "&", "$",
+          "{:.4f}".format(statistics.mean(redundancyScoreFilteredSamples)), "$",
           "\\\\")
     print()
     print()
@@ -380,11 +403,12 @@ if __name__ == '__main__':
 
     sampleAllScores.sort(key=sortByScore)
     datasetAllScores.sort(key=sortByScore)
+    sampleTrainingFilteredAllScores.sort(key=sortByScore)
 
     plotScoreHistogramSample(sampleAllScores)
     plotScoreHistogramDataset(datasetAllScores)
 
     # region statistical calculations
 
-    calcStatistics(sampleAllScores, datasetAllScores)
+    calcStatistics(sampleAllScores, datasetAllScores, sampleTrainingFilteredAllScores)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
