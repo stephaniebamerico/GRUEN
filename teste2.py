@@ -56,6 +56,8 @@ def get_lm_score(sentences):
         input_ids = torch.tensor(tokenizer.encode(tokenize_input)).unsqueeze(0).to(device)
         with torch.no_grad():
             loss = model(input_ids, labels=input_ids)[0]
+        print("----loss: ")
+        print(loss, loss.item())
         return math.exp(loss.item())
 
     model_name = 'bert-base-cased'
