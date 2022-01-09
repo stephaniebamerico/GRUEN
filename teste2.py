@@ -151,6 +151,7 @@ def get_grammaticality_score(processed_candidates):
     cola_score = get_cola_score(processed_candidates)
 
     print("----------")
+    print(processed_candidates[1])
     print("lm score: ", lm_score[1])
     print("cola score: ", cola_score[1])
     grammaticality_score = [1.0 * math.exp(-0.5*x) + 1.0 * y for x, y in zip(lm_score, cola_score)]
