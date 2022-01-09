@@ -77,6 +77,7 @@ def get_lm_score(sentences):
             print("x:", x)
             score_i += score_sentence(x, tokenizer, model)
         score_i /= len(sentence)
+        score_i = math.exp(-0.5 * score_i)
         lm_score.append(score_i)
         print("--------------------")
     return lm_score
@@ -156,7 +157,7 @@ def get_grammaticality_score(processed_candidates):
     print("lm score: ", lm_score[sampleToPrint])
     print("cola score: ", cola_score[sampleToPrint])
     
-    grammaticality_score = [1.0 * math.exp(-0.5*x) + 1.0 * y for x, y in zip(lm_score, cola_score)]
+    grammaticality_score = [1.0 * x + 1.0 * y for x, y in zip(lm_score, cola_score)]
     print("grammaticality_score: ", grammaticality_score[sampleToPrint])
     grammaticality_score = [max(0, x / 8.0 + 0.5) for x in grammaticality_score]  # re-scale
     print("grammaticality_score, re-scale: ", grammaticality_score[sampleToPrint])
