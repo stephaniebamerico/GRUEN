@@ -63,6 +63,7 @@ def get_lm_score(sentences):
     tokenizer = BertTokenizer.from_pretrained(model_name)
     lm_score = []
     for sentence in tqdm(sentences):
+        print("--------------------")
         print("sentence:", sentence)
         if len(sentence) == 0:
             lm_score.append(0.0)
@@ -73,6 +74,7 @@ def get_lm_score(sentences):
             score_i += score_sentence(x, tokenizer, model)
         score_i /= len(sentence)
         lm_score.append(score_i)
+        print("--------------------")
     return lm_score
 
 
