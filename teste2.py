@@ -13,6 +13,7 @@ from transformers import glue_convert_examples_to_features
 from transformers.data.processors.utils import InputExample
 from wmd import WMD
 
+sampleToPrint = 0
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -151,13 +152,13 @@ def get_grammaticality_score(processed_candidates):
     cola_score = get_cola_score(processed_candidates)
 
     print("----------")
-    print(processed_candidates[1])
-    print("lm score: ", lm_score[1])
-    print("cola score: ", cola_score[1])
+    print(processed_candidates[sampleToPrint])
+    print("lm score: ", lm_score[sampleToPrint])
+    print("cola score: ", cola_score[sampleToPrint])
     grammaticality_score = [1.0 * math.exp(-0.5*x) + 1.0 * y for x, y in zip(lm_score, cola_score)]
-    print("grammaticality_score: ", grammaticality_score[1])
+    print("grammaticality_score: ", grammaticality_score[sampleToPrint])
     grammaticality_score = [max(0, x / 8.0 + 0.5) for x in grammaticality_score]  # re-scale
-    print("grammaticality_score, re-scale: ", grammaticality_score[1])
+    print("grammaticality_score, re-scale: ", grammaticality_score[sampleToPrint])
     print("----------")
     return grammaticality_score
 
