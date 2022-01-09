@@ -13,7 +13,7 @@ from transformers import glue_convert_examples_to_features
 from transformers.data.processors.utils import InputExample
 from wmd import WMD
 
-sampleToPrint = 0
+sampleToPrint = 1
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -245,7 +245,8 @@ def get_gruen(candidates):
 
 if __name__ == "__main__":
      candidates = ["This is a good example.",
-                   "This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
+                   "He am a dog",
+                   #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
                    "Hello, doctor.",
                    "I like apples. I really like apples.",
                    "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
