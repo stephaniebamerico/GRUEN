@@ -155,6 +155,7 @@ def get_grammaticality_score(processed_candidates):
     print(processed_candidates[sampleToPrint])
     print("lm score: ", lm_score[sampleToPrint])
     print("cola score: ", cola_score[sampleToPrint])
+    
     grammaticality_score = [1.0 * math.exp(-0.5*x) + 1.0 * y for x, y in zip(lm_score, cola_score)]
     print("grammaticality_score: ", grammaticality_score[sampleToPrint])
     grammaticality_score = [max(0, x / 8.0 + 0.5) for x in grammaticality_score]  # re-scale
@@ -244,13 +245,15 @@ def get_gruen(candidates):
 
 
 if __name__ == "__main__":
-     candidates = ["This is a good example.",
+     candidates = [
+                   #"This is a good example.",
                    "dfsa fjdio fdsoj fdosg fdji jfid  8  fjsf u ifhue fheu gnbiu a burie b uibe uia",
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
-                   "Hello, doctor.",
-                   "I like apples. I really like apples.",
-                   "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
-                   "Once upon a time."]
+                   #"Hello, doctor.",
+                   #"I like apples. I really like apples.",
+                   #"There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
+                   #"Once upon a time."
+                   ]
      gruenScores = get_gruen(candidates)
      print(gruenScores)
 
