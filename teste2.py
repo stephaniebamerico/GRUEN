@@ -50,6 +50,7 @@ def get_lm_score(sentences):
         # if len(sentence.strip().split()) <= 1:
         #     return 10000
         tokenize_input = tokenizer.tokenize(sentence)
+        print("tokenized Inputs",tokenize_input)
         if len(tokenize_input) > 510:
             tokenize_input = tokenize_input[:510]
         input_ids = torch.tensor(tokenizer.encode(tokenize_input)).unsqueeze(0).to(device)
