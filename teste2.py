@@ -221,51 +221,19 @@ def get_gruen(candidates):
     grammaticality_score = get_grammaticality_score(processed_candidates)
     redundancy_score = get_redundancy_score(processed_candidates)
     focus_score = get_focus_score(processed_candidates)
+    print(grammaticality_score, redundancy_score, focus_score)
+    print(tuple(zip(grammaticality_score, redundancy_score, focus_score)))
     gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
     return gruen_score
 
 
 if __name__ == "__main__":
-    # candidates = ["This is a good example.",
-    #               "This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
-    #               "Hello, doctor.",
-    #               "I like apples. I really like apples.",
-    #               "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
-    #               "Once upon a time."]
-    text = "King Bluebeard Next to a great forest there lived an old man who had three sons and two daughters. Once they were sitting together thinking of nothing when a splendid carriage suddenly drove up and stopped in front of their house. A dignified gentleman climbed from the carriage, entered the house, and engaged the father and his daughters in conversation. Because he especially liked the youngest one, he asked the father if he would not give her to him to be his wife. This seemed to the father to be a good marriage, and he had long desired to see his daughters taken care of while he was still alive. However, the daughter could not bring herself to say yes, for the strange knight had an entirely blue beard, which caused her to shudder with fear whenever she looked at him. She went to her brothers, who were valiant knights, and asked them for advice. The brothers thought that she should accept Bluebeard, and they gave her a little whistle, saying, \"If you are ever threatened, just blow this whistle, and we will come to your aid!\" Thus she let herself be talked into becoming the strange man's wife, but she did arrange for her sister to accompany her when King Bluebeard took her to his castle. When the young wife arrived there, there was great joy throughout the entire castle, and King Bluebeard was very happy as well. This continued for about four weeks, and then he said that he was going on a journey. He turned all the keys of the castle over to his wife, saying, \"You may go anywhere in the castle, unlock everything, and look at anything you want to, except for one door, to which this little golden key belongs. If you value your life, you are not allowed to open it!\" \"Oh no!\" she said, adding that she surely would not open that door. But after the king had been away for a while, she could find no rest for constantly thinking about what there might be in the forbidden chamber. She was just about to unlock it when her sister approached her and held her back. However, on the morning of the fourth day, she could no longer resist the temptation, and taking the key she secretly crept to the room, stuck the key into the lock, and opened the door. Horrified, she saw that the entire room was filled with corpses, all of them women. She wanted to slam the door shut immediately, but the key fell out and into the blood. She quickly picked it up, but it was stained with blood. And however much she rubbed and cleaned it, the stains would not go away. With fear and trembling she went to her sister. When King Bluebeard finally returned from his journey, he immediately asked for the golden key. Seeing the bloodstains on it, he said, \"Wife, why did you not heed my warning? Your hour has now struck! Prepare yourself to die, for you have been in the forbidden room!\" Crying, she went to her sister, who lived upstairs in the castle. While she was bemoaning her fate to her, the sister thought of the whistle that she had received from her brothers, and said, \"Give me the whistle! I shall send a signal to our brothers. Perhaps they will be able to help!\" And she blew the whistle three times, issuing a bright sound that rang through the woods. An hour later they heard Bluebeard rustling up the stairs to get his wife and slaughter her. \"Oh God, oh God!\" she cried out. \"Aren't my brothers coming?\" She rushed to the door and locked it, then fearfully stood there holding it shut as well. Bluebeard pounded on the door, crying out that she should open it, and when she did not do so, he tried to break it down. \"Oh sister, oh sister, aren't my brothers coming?\" she said to her sister, who was standing at the window looking out into the distance. She replied, \"I don't see anyone yet. \" Meanwhile, Bluebeard was breaking the door apart more and more, and the opening was almost large enough for him to get through, when three knights suddenly appeared before the castle. The sister cried from the window as loudly as she could, \"Help! Help!\" and waved to her brothers. They stormed up the stairs to where they had heard their sister's cry for help. There they saw King Bluebeard, sword in hand, standing before the broken door, and they heard their sister screaming inside the room. Immediately sensing what he was up to, they quickly ran their daggers into his breast and killed him. When the brothers learned what the godless king was going to do to their sister, and that he had already killed so many women, they destroyed his castle, so that there was not one stone remaining on another one. They took with them all his treasures, and lived happily with their sisters in their father's house."
-    gruenScores = get_gruen(candidates)
-    hi = len(text) 
-    lo = 0
-    ```while (hi > lo):
-        mid = int((hi + lo)/2)
-
-        #candidates = [text[lo:mid], text[mid:hi], text[lo:hi]]
-        #print("--------------")
-        #for candi in candidates:
-        #    print()
-        #    print (candi)
-        #    print()
-        # print(candidates)
-        print("--------------")
-    #for idx, val in enumerate(candidates):
-    #    f = open ("teste" + str(idx), "w")
-    #    f.write(val)
-    #    f.close()
-        
-	gruen_score = get_gruen(candidates)
-        # print(gruen_score)
-        # float = 2.154327
-        # format_float = "{:.2f}".format(float)
-        format_float = "{:.15f}".format(gruen_score[0])
-        print(format_float)
-
-        format_float = "{:.15f}".format(gruen_score[1])
-        print(format_float)
-        format_float = "{:.15f}".format(gruen_score[2])```
-        print(format_float)
-        if (gruen_score[0] == 0):
-            hi = mid
-        if (gruen_score[1] == 0):
-            lo = mid+1
-    print (hi, lo)
+     candidates = ["This is a good example.",
+                   "This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
+                   "Hello, doctor.",
+                   "I like apples. I really like apples.",
+                   "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
+                   "Once upon a time."]
+     gruenScores = get_gruen(candidates)
+     print(gruenScores)
 
