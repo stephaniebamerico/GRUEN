@@ -54,6 +54,7 @@ def get_lm_score(sentences):
         print("tokenized Inputs",tokenize_input)
         if len(tokenize_input) > 510:
             tokenize_input = tokenize_input[:510]
+        print(tokenizer.encode(tokenize_input))
         input_ids = torch.tensor(tokenizer.encode(tokenize_input)).unsqueeze(0).to(device)
         with torch.no_grad():
             loss = model(input_ids, labels=input_ids)[0]
