@@ -247,7 +247,7 @@ def get_gruen(candidates):
 if __name__ == "__main__":
      candidates = [
                    #"This is a good example.",
-                   "dfsa fjdio fdsoj fdosg fdji jfid  8  fjsf u ifhue fheu gnbiu a burie b uibe uia",
+                   "dfsa fjdio fdsoj fdosg fdji jfid  8. fjsf u ifhue fheu. gnbiu a burie b uibe uia",
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
                    #"Hello, doctor.",
                    #"I like apples. I really like apples.",
