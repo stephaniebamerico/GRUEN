@@ -73,9 +73,9 @@ def get_lm_score(sentences):
             lm_score.append(0.0)
             continue
         score_i = 0.0
-        for x in sentence:
-            print("x:", x)
-            score_i += score_sentence(x, tokenizer, model)
+        for word in sentence:
+            print("x:", word)
+            score_i += score_sentence(word, tokenizer, model)
         score_i /= len(sentence)
         score_i = math.exp(-0.5 * score_i)
         lm_score.append(score_i)
@@ -248,7 +248,9 @@ def get_gruen(candidates):
 if __name__ == "__main__":
      candidates = [
                    #"This is a good example.",
-                   "dfsa fjdio fdsoj fdosg fdji jfid.  8 fjsf u ifhue fheu. gnbiu a burie b uibe uia",
+                   "Ela é bonita. Ela é.",
+                   "aaaaaaaaaa. aaaaaaa",
+                   "aaaaaaaaaa. aaaaaaaa"
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
                    #"Hello, doctor.",
                    #"I like apples. I really like apples.",
