@@ -223,6 +223,8 @@ def get_redundancy_score(all_summary):
             for k in range(j + 1, len(summary)):
                 flag += if_two_sentence_redundant(summary[j].strip(), summary[k].strip())
         redundancy_score[i] += -0.1 * flag
+    if (printRed): print(redundancy_score)
+    if (printRed): print("---------------")
     return redundancy_score
 
 
