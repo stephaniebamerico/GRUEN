@@ -13,3 +13,5 @@ gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redunda
 # (0.700484037399292 ,  0.0,  0.0) => 0.700484037399292
 #[, ,, , , ]
 print(gruen_score)
+
+if(True): print("teste")

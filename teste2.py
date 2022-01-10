@@ -16,6 +16,10 @@ from wmd import WMD
 sampleToPrint = 0
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+printGram = 0
+printFoc = 0
+printRed = 0
+
 
 """ Processing """
 def preprocess_candidates(candidates):
@@ -51,14 +55,14 @@ def get_lm_score(sentences):
         # if len(sentence.strip().split()) <= 1:
         #     return 10000
         tokenize_input = tokenizer.tokenize(sentence)
-        print("tokenized Inputs",tokenize_input)
+        if(printGram):print("tokenized Inputs",tokenize_input)
         if len(tokenize_input) > 510:
             tokenize_input = tokenize_input[:510]
         input_ids = torch.tensor(tokenizer.encode(tokenize_input)).unsqueeze(0).to(device)
         with torch.no_grad():
             loss = model(input_ids, labels=input_ids)[0]
-        print("----loss: ")
-        print(loss, loss.item())
+        if(printGram):print("----loss: ")
+        if(printGram):print(loss, loss.item())
         return math.exp(loss.item())
 
     model_name = 'bert-base-cased'
@@ -151,17 +155,16 @@ def get_cola_score(sentences):
 def get_grammaticality_score(processed_candidates):
     lm_score = get_lm_score(processed_candidates)
     cola_score = get_cola_score(processed_candidates)
-
-    print("----------")
-    print(processed_candidates[sampleToPrint])
-    print("lm score: ", lm_score[sampleToPrint])
-    print("cola score: ", cola_score[sampleToPrint])
+    if(printGram): print("----------")
+    if(printGram):print(processed_candidates[sampleToPrint])
+    if(printGram):print("lm score: ", lm_score[sampleToPrint])
+    if(printGram):print("cola score: ", cola_score[sampleToPrint])
     
     grammaticality_score = [1.0 * x + 1.0 * y for x, y in zip(lm_score, cola_score)]
-    print("grammaticality_score: ", grammaticality_score[sampleToPrint])
+    if(printGram):print("grammaticality_score: ", grammaticality_score[sampleToPrint])
     grammaticality_score = [max(0, x / 8.0 + 0.5) for x in grammaticality_score]  # re-scale
-    print("grammaticality_score, re-scale: ", grammaticality_score[sampleToPrint])
-    print("----------")
+    if(printGram):print("grammaticality_score, re-scale: ", grammaticality_score[sampleToPrint])
+    if(printGram):print("----------")
     return grammaticality_score
 
 
