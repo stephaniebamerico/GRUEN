@@ -259,7 +259,7 @@ def get_gruen(candidates):
 if __name__ == "__main__":
      candidates = [
                    #"This is a good example.",
-                   "Ela é bonita. Ela é.",
+                   "Ela é realmente muito bonita. Ela é bonita.",
                    "um teste aqui. um teste."
                    "aaaaaaaaaa. aaaaaaaa"
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
