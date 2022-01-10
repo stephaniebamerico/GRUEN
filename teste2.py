@@ -114,6 +114,7 @@ def get_cola_score(sentences):
         eval_dataloader = torch.utils.data.DataLoader(eval_dataset, sampler=torch.utils.data.SequentialSampler(eval_dataset), batch_size=max(1, torch.cuda.device_count()))
         preds = None
         for batch in tqdm(eval_dataloader, desc="Evaluating"):
+            print(batch)
             model.eval()
             batch = tuple(t.to(device) for t in batch)
 
