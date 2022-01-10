@@ -192,24 +192,24 @@ def get_redundancy_score(all_summary):
             if (printRed): print("LCS_string_length",LCS_string_length)
             if (printRed): print("longest_common_substring",longest_common_substring)
             if LCS_string_length > 0.8 * min(len(a), len(b)):
-                if (printRed): print("lcs string length")
+                if (printRed): print("penality lcs string length")
                 flag_num += 1
             LCS_word_length = len(a[longest_common_substring[0]: (longest_common_substring[0]+LCS_string_length)].strip().split())
             if (printRed): print("LCS_word_length", LCS_word_length)
             if (printRed): print("LCS_word", a[longest_common_substring[0]: (longest_common_substring[0]+LCS_string_length)].strip().split())
             if LCS_word_length > 0.8 * min(len(a_split), len(b_split)):
-                if (printRed): print("lcs word length")
+                if (printRed): print("penality lcs word length")
                 flag_num += 1
             edit_distance = editdistance.eval(a, b)
             if (printRed): print("edit_distance", edit_distance)
             if edit_distance < 0.6 * max(len(a), len(b)):  # Number of modifications from the longer sentence is too small.
                 flag_num += 1
-                if (printRed): print("edit distance")
+                if (printRed): print("penality edit distance")
             number_of_common_word = len([x for x in a_split if x in b_split])
             if (printRed): print("number_of_common_word",number_of_common_word)
             if (printRed): print("common_word",[x for x in a_split if x in b_split])
             if number_of_common_word > 0.8 * min(len(a_split), len(b_split)):
-                if (printRed): print("number of common words")
+                if (printRed): print("penality number of common words")
                 flag_num += 1
         return flag_num
 
@@ -272,7 +272,7 @@ if __name__ == "__main__":
                    #"This is a good example.",
                    "Ela é realmente muito bonita. Ela é bonita.",
                    "uma bota boto rosa. A bota boto rosa azul verde.",
-                   "um teste aqui. um teste."
+                   "um teste aqui. um teste.",
                    "aaaaaaaaaa. aaaaaaaa"
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
                    #"Hello, doctor.",
