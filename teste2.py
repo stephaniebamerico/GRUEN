@@ -183,7 +183,7 @@ def get_redundancy_score(all_summary):
         if (printRed): print(a_split, b_split)
         if max(len(a_split), len(b_split)) >= 5:
             print("word pair:")
-            print(a, b)
+            print(a, ",", b)
             longest_common_substring = difflib.SequenceMatcher(None, a, b).find_longest_match(0, len(a), 0, len(b))
             LCS_string_length = longest_common_substring.size
             if (printRed): print("LCS_string_length",LCS_string_length)
