@@ -81,7 +81,7 @@ def get_lm_score(sentences):
             print("x:", word)
             score_i += score_sentence(word, tokenizer, model)
         score_i /= len(sentence)
-        # score_i = math.exp(-0.5 * score_i)
+        score_i = math.exp(-0.5 * score_i)
         lm_score.append(score_i)
         print("--------------------")
     return lm_score
@@ -298,7 +298,7 @@ if __name__ == "__main__":
                 #    " \"I have learned that you are a wolf. \" Then he said, in a suspicious tone, \"Are you a wolf? Are you one of the dogs?\" He answered cautiously, \"No, but I can be home-taken if you will perform after my pattern. \""
                 #    "One day the fox and his wife were out in the woods in search of game. One day the fox caught a wolf that had sneaked into the woods.",
                 #    "He was a boy. She was a girl. Can I make i any more obvious?"
-                   "The capital of France is Washington",
+                   "Introduction of the NLP (Natural Language Processing) revolutionized all the industries. So, NLP is a branch of AI (artificial Intelligence) that helps computer understand, interpret and manipulate human language. Now, with heaps of data available (thanks to big data) to us the major challenge that industries were facing was to communicate with computers. Our language system is astoundingly complex and diverse. We have the capability to express ourselves in infinite ways, may it be verbally, physically or written. The first challenge was written text. We have hundreds of language and each with its unique set of grammar and syntax rules.",
                    "The capital of France is Paris",
                 # "The bear was intended as a holy bear, but when it reached home it becameched andches, and all its clothes were worn away. Then it went to the devil, and knocked at his door and said, \"Bring me my steed and my royal robes!\" "
                    #"Once upon a time."
