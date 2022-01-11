@@ -256,6 +256,9 @@ def get_focus_score(all_summary):
             if (printFoc): print("------all summary[i]")
             if (printFoc): print(all_summary[i])
             if (printFoc): print("------all summary[i] end")
+            if (printFoc): print("------focus score")
+            if (printFoc): print(score)
+            if (printFoc): print("------focus score end")
             all_score.append(score)
         return all_score
 
