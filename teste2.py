@@ -294,7 +294,7 @@ if __name__ == "__main__":
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
                    #"Hello, doctor.",
                    #"I like apples. I really like apples.",
-                   "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
+                   "One day the fox and his wife were out in the woods in search of game. One day the fox caught a wolf that had sneaked into the woods. When the wolf saw the fox, he decided to eat him.",
                    #"Once upon a time."
                    ]
      gruenScores = get_gruen(candidates)
