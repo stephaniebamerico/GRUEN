@@ -158,14 +158,14 @@ def get_grammaticality_score(processed_candidates):
     lm_score = get_lm_score(processed_candidates)
     cola_score = get_cola_score(processed_candidates)
     if(printGram): print("----------")
-    if(printGram):print(processed_candidates[sampleToPrint])
-    if(printGram):print("lm score: ", lm_score[sampleToPrint])
-    if(printGram):print("cola score: ", cola_score[sampleToPrint])
+    if(printGram):print(processed_candidates)
+    if(printGram):print("lm score: ", lm_score)
+    if(printGram):print("cola score: ", cola_score)
     
     grammaticality_score = [1.0 * x + 1.0 * y for x, y in zip(lm_score, cola_score)]
-    if(printGram):print("grammaticality_score: ", grammaticality_score[sampleToPrint])
+    if(printGram):print("grammaticality_score: ", grammaticality_score)
     grammaticality_score = [max(0, x / 8.0 + 0.5) for x in grammaticality_score]  # re-scale
-    if(printGram):print("grammaticality_score, re-scale: ", grammaticality_score[sampleToPrint])
+    if(printGram):print("grammaticality_score, re-scale: ", grammaticality_score)
     if(printGram):print("----------")
     return grammaticality_score
 
