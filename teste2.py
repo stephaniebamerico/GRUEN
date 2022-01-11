@@ -272,14 +272,14 @@ def get_gruen(candidates):
 if __name__ == "__main__":
      candidates = [
                    #"This is a good example.",
-                   "Ela é realmente muito bonita. Ela é bonita.",
-                   "The rat said, \"I will not\".The cat said, \"I will not\".",
-                   "um teste aqui. um teste.",
-                   "aaaaaaaaaa. aaaaaaaa"
+                #    "Ela é realmente muito bonita. Ela é bonita.",
+                #    "The rat said, \"I will not\".The cat said, \"I will not\".",
+                #    "um teste aqui. um teste.",
+                #    "aaaaaaaaaa. aaaaaaaa"
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
                    #"Hello, doctor.",
                    #"I like apples. I really like apples.",
-                   #"There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
+                   "There was a boy and a girl, they were siblings. He smilling at her. She was angry.",
                    #"Once upon a time."
                    ]
      gruenScores = get_gruen(candidates)
