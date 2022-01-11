@@ -81,7 +81,7 @@ def get_lm_score(sentences):
             print("x:", word)
             score_i += score_sentence(word, tokenizer, model)
         score_i /= len(sentence)
-        score_i = math.exp(-0.5 * score_i)
+        # score_i = math.exp(-0.5 * score_i)
         lm_score.append(score_i)
         print("--------------------")
     return lm_score
