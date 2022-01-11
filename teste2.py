@@ -17,8 +17,8 @@ sampleToPrint = 0
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 printGram = 0
-printFoc = 0
-printRed = 1
+printFoc = 1
+printRed = 0
 
 
 """ Processing """
@@ -241,10 +241,13 @@ def get_focus_score(all_summary):
             for j in range(1, len(all_summary[i])):
                 doc1 = nlp(all_summary[i][j-1])
                 doc2 = nlp(all_summary[i][j])
+                if (printFoc): print(doc1)
+                if (printFoc): print(doc2)
                 try:
                     score.append(1.0/(1.0 + math.exp(-doc1.similarity(doc2)+7)))
                 except:
                     score.append(1.0)
+            if (printFoc): print(all_summary[i])
             all_score.append(score)
         return all_score
 
