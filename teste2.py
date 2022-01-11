@@ -251,6 +251,7 @@ def get_focus_score(all_summary):
                 if (printFoc): print("------docs")
                 try:
                     score.append(1.0/(1.0 + math.exp(-doc1.similarity(doc2)+7)))
+                    if (printFoc): print(doc1.similarity(doc2))
                 except:
                     score.append(1.0)
             if (printFoc): print("------all summary[i]")
