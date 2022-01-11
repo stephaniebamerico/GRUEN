@@ -233,6 +233,7 @@ def get_focus_score(all_summary):
     def compute_sentence_similarity():
         if (printFoc): print("all summary")
         if (printFoc): print(all_summary)
+        if (printFoc): print("all summary end")
         nlp = spacy.load('en_core_web_md')
         nlp.add_pipe(WMD.SpacySimilarityHook(nlp), last=True)
         all_score = []
@@ -244,14 +245,15 @@ def get_focus_score(all_summary):
             for j in range(1, len(all_summary[i])):
                 doc1 = nlp(all_summary[i][j-1])
                 doc2 = nlp(all_summary[i][j])
-                if (printFoc): print(doc1)
-                if (printFoc): print(doc2)
+                # if (printFoc): print(doc1)
+                # if (printFoc): print(doc2)
                 try:
                     score.append(1.0/(1.0 + math.exp(-doc1.similarity(doc2)+7)))
                 except:
                     score.append(1.0)
             if (printFoc): print("all summary[i]")
             if (printFoc): print(all_summary[i])
+            if (printFoc): print("all summary[i] end")
             all_score.append(score)
         return all_score
 
