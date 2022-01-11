@@ -273,7 +273,7 @@ if __name__ == "__main__":
      candidates = [
                    #"This is a good example.",
                    "Ela é realmente muito bonita. Ela é bonita.",
-                   "bolo boto lobo rosa roxo. lobo boto lobo rosa roxo.",
+                   "o lobo mau comeu a chapeuzinho. o lobo mau comeu a vovozinha.",
                    "um teste aqui. um teste.",
                    "aaaaaaaaaa. aaaaaaaa"
                    #"This is a bad example. It is ungrammatical and redundant. Orellana shown red card for throwing grass at Sergio Busquets. Orellana shown red card for throwing grass at Sergio Busquets.",
