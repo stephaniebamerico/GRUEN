@@ -274,6 +274,7 @@ def get_gruen(candidates):
     grammaticality_score = get_grammaticality_score(processed_candidates)
     redundancy_score = get_redundancy_score(processed_candidates)
     focus_score = get_focus_score(processed_candidates)
+    print("grammaticality_score, redundancy_score, focus_score")
     print(grammaticality_score, redundancy_score, focus_score)
     print(tuple(zip(grammaticality_score, redundancy_score, focus_score)))
     gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
