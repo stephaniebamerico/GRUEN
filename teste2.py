@@ -298,7 +298,8 @@ if __name__ == "__main__":
                 #    " \"I have learned that you are a wolf. \" Then he said, in a suspicious tone, \"Are you a wolf? Are you one of the dogs?\" He answered cautiously, \"No, but I can be home-taken if you will perform after my pattern. \""
                 #    "One day the fox and his wife were out in the woods in search of game. One day the fox caught a wolf that had sneaked into the woods.",
                 #    "He was a boy. She was a girl. Can I make i any more obvious?"
-                   "The capital of France is Hong Kong",
+                   "The capital of France is Washington",
+                   "The capital of France is Paris",
                 # "The bear was intended as a holy bear, but when it reached home it becameched andches, and all its clothes were worn away. Then it went to the devil, and knocked at his door and said, \"Bring me my steed and my royal robes!\" "
                    #"Once upon a time."
                    ]
