@@ -16,8 +16,8 @@ from wmd import WMD
 sampleToPrint = 0
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-printGram = 0
-printFoc = 1
+printGram = 1
+printFoc = 0
 printRed = 0
 
 
