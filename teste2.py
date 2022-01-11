@@ -295,8 +295,8 @@ if __name__ == "__main__":
                    #"Hello, doctor.",
                    #"I like apples. I really like apples.",
                 #    " \"I have learned that you are a wolf. \" Then he said, in a suspicious tone, \"Are you a wolf? Are you one of the dogs?\" He answered cautiously, \"No, but I can be home-taken if you will perform after my pattern. \""
-                "\"And you think you are fit to marry the son of a troll?\" he asked. Then the priest had to laugh all the harder."    
                 #    "One day the fox and his wife were out in the woods in search of game. One day the fox caught a wolf that had sneaked into the woods.",
+                "The bear was intended as a holy bear, but when it reached home it becameched andches, and all its clothes were worn away. Then it went to the devil, and knocked at his door and said, \"Bring me my steed and my royal robes!\" "
                    #"Once upon a time."
                    ]
      gruenScores = get_gruen(candidates)
