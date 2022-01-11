@@ -229,7 +229,9 @@ def get_redundancy_score(all_summary):
 
 
 def get_focus_score(all_summary):
+    if (printFoc): print("--------------------")
     def compute_sentence_similarity():
+        if (printFoc): print(all_summary)
         nlp = spacy.load('en_core_web_md')
         nlp.add_pipe(WMD.SpacySimilarityHook(nlp), last=True)
         all_score = []
